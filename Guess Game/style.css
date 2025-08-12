@@ -22,8 +22,53 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
   .game-area {
-
+    .inputs {
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      span {
+        font-size: 25px;
+        margin-right: 15px;
+        font-weight: bold;
+      }
+    }
+    .disabled-input {
+      opacity: 0.5;
+      pointer-events: none;
+    } 
+    input {
+      width: 60px;
+      height: 60px;
+      margin: 0 5px;
+      font-size: 55px;
+      border: none;
+      border-bottom: 3px solid #333;
+      text-align: center;
+      caret-color: var(--primary-color);
+      background-color: white;
+      &:focus {
+        outline: 1px solid #333;
+      }
+      &.yes-in-place {
+        background-color: #f89e13;
+        border-color: #f89e13;
+        color: white;
+      }
+      &.not-in-place {
+        background-color: #18ba89;
+        border-color: #18ba89;
+        color: white;
+      }
+      &.no {
+        background-color: #27303f;
+        border-color: #27303f;
+        color: white;
+      }
+    }
   }
   .key-colors {
     .key-color {
