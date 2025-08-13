@@ -1,20 +1,24 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --primary-color: #f44336;
 }
+
 body {
   margin: 0;
   background-color: #eee;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 h1 {
   text-align: center;
   padding: 20px;
   margin: 0 0 50px;
   background-color: white;
 }
+
 .guess-game {
   text-align: center;
   width: 1000px;
@@ -23,81 +27,93 @@ h1 {
   justify-content: space-between;
   align-items: flex-start;
 }
-  .game-area {
-    .inputs {
-      > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-      span {
-        font-size: 25px;
-        margin-right: 15px;
-        font-weight: bold;
-      }
-    }
-    .disabled-input {
-      opacity: 0.5;
-      pointer-events: none;
-    } 
-    input {
-      width: 60px;
-      height: 60px;
-      margin: 0 5px;
-      font-size: 55px;
-      border: none;
-      border-bottom: 3px solid #333;
-      text-align: center;
-      caret-color: var(--primary-color);
-      background-color: white;
-      &:focus {
-        outline: 1px solid #333;
-      }
-      &.yes-in-place {
-        background-color: #f89e13;
-        border-color: #f89e13;
-        color: white;
-      }
-      &.not-in-place {
-        background-color: #18ba89;
-        border-color: #18ba89;
-        color: white;
-      }
-      &.no {
-        background-color: #27303f;
-        border-color: #27303f;
-        color: white;
-      }
-    }
-  }
-  .key-colors {
-    .key-color {
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      background-color: white;
-      margin-bottom: 15px;
-      .key {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-        &.inplace {
-          background-color: #f89e13;
-        }
-        &.outplace {
-          background-color: #18ba89;
-        }
-        &.not {
-          background-color: #27303f;
-        }
-      }
-      .key-text {
-        font-size: 20px;
-        font-weight: bold;
-      }
-    }
-  }
+
+/* Game Area Inputs */
+.game-area .inputs > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
 }
+
+.game-area .inputs > div span {
+  font-size: 25px;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.game-area .inputs .disabled-input {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.game-area .inputs input {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  font-size: 55px;
+  border: none;
+  border-bottom: 3px solid #333;
+  text-align: center;
+  caret-color: var(--primary-color);
+  background-color: white;
+}
+
+.game-area .inputs input:focus {
+  outline: 1px solid #333;
+}
+
+.game-area .inputs input.yes-in-place {
+  background-color: #f89e13;
+  border-color: #f89e13;
+  color: white;
+}
+
+.game-area .inputs input.not-in-place {
+  background-color: #18ba89;
+  border-color: #18ba89;
+  color: white;
+}
+
+.game-area .inputs input.no {
+  background-color: #27303f;
+  border-color: #27303f;
+  color: white;
+}
+
+/* Key Colors */
+.key-colors .key-color {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+.key-colors .key-color .key {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.key-colors .key-color .key.inplace {
+  background-color: #f89e13;
+}
+
+.key-colors .key-color .key.outplace {
+  background-color: #18ba89;
+}
+
+.key-colors .key-color .key.not {
+  background-color: #27303f;
+}
+
+.key-colors .key-color .key-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -107,4 +123,74 @@ footer {
   width: 100%;
   background-color: #333;
   color: white;
+}
+
+.control {
+  display: flex;
+  align-items: center;  
+  gap: 20px;
+}
+.control button {
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.control button:disabled {
+  background-color: black;
+  opacity: 0.4;
+  cursor: no-drop;
+}
+.control button.check {
+  flex: 1;
+  background-color: rgba(255, 0, 0, 0.746);
+}
+.control button.hint {
+  background-color: #18ba89;
+  width: 100px;
+}
+
+/* Message Div */
+.message {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+.message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border-color: #bee5eb;
+}
+
+.message.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border-color: #ffeaa7;
 }
