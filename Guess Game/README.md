@@ -98,10 +98,4 @@ This game works on all modern browsers including:
 
 **Mostafa Atwa** © 2025
 
-## 📄 License
-
-This project is open source and available under the MIT License.
-
----
-
 **Enjoy playing and happy guessing! 🎉**
